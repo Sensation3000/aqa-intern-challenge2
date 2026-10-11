@@ -29,4 +29,10 @@ test.describe('Uchi.ru widget ', () => {
 
     expect(await widgetPage.getTitle()).toEqual('Связь с поддержкой');
   });
+
+  test('verify number of popular articles', async () => {
+     await widgetPage.openWidget();
+    
+     await expect(widgetPage.getPopularArticlesList()).toHaveCount(5);
+  });
 });
